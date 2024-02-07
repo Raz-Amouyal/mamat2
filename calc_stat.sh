@@ -12,6 +12,7 @@ course_found=false
 for file in "$PWD/$1".*; do
     # Check if the file matches the specified pattern
     if [[ -e "$file" ]]; then
+        #arg $1 not necessary contain the grades' file name 
     	stats="$file"
         course_found=true
         break
@@ -31,16 +32,16 @@ if [[ -d $directory_name ]]; then
 fi
 
 mkdir "$directory_name"
-
+#compile all the files
 gcc -g -Wall hist.c -o hist.exe
-
-./hist.exe "$stats" > ./"$directory_name"/statistics.txt
-
 gcc -g -Wall mean.c -o mean.exe
 gcc -g -Wall median.c -o median.exe
 gcc -g -Wall min.c -o min.exe
 gcc -g -Wall max.c -o max.exe
-ls -l
+
+#make hist
+./hist.exe "$stats" > ./"$directory_name"/histogram.txt
+
 mean=$(./mean.exe "$stats")
 
 median=$(./median.exe "$stats")
@@ -49,4 +50,5 @@ min=$(./min.exe "$stats")
 
 max=$(./max.exe "$stats")
 
-echo -e "$mean\t$median\t$min\t$max" > ./"$directory_name"/histogram.txt
+#combine the results with tab between
+echo -e "$mean\t$median\t$min\t$max" > ./"$directory_name"/statistics.txt
