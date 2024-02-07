@@ -18,6 +18,8 @@ fi
 
 mkdir "$directory_name"
 
+gcc -g -Wall hist.c -o hist.exe
+
 ./hist.exe "$1" > ./"$directory_name"/histogram.txt
 
 gcc -g -Wall mean.c median.c min.c max.c -o prog.exe
