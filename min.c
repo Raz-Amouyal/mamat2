@@ -30,6 +30,7 @@ void operate(FILE *f){
     int grade;
     int retval;
     int min_grade = MAXGRADE;
+    int students_num = 1;
 
     while (1){
         retval = fscanf(f, "%d", &grade);
@@ -45,8 +46,10 @@ void operate(FILE *f){
         }
         if (min_grade < grade){
             min_grade = grade;
+
         }
+        students_num++;
     }
 
-    printf("%d\t", min_grade);
+    printf("%d", min_grade);
 }
