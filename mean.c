@@ -29,6 +29,7 @@ void operate(FILE *f){
     double avg = 0;
     int line_n = 0;
 
+
     while (1){
         retval = fscanf(f, "%d", &grade);
         if (retval == EOF) {
@@ -44,7 +45,7 @@ void operate(FILE *f){
         }
         avg += grade;
     }
-    printf("%.2f\t", avg / line_n);
+    printf("%.2f", avg / line_n);
 }
 
 
