@@ -14,14 +14,12 @@ void operate(int *bins);
 int main(int argc, char *argv[]) {
 
     parse_arg(argc, argv);
-
     if (!f) {
         fprintf(stderr, "File not found: \"%s\"\n", argv[1]);
         return 1;
     }
 
-    int *bins = (int*) calloc(sizeof(int)*nbins);
-
+    int *bins = (int*) calloc(nbins,sizeof(int));
     operate(bins);
     free(bins);
 
@@ -65,4 +63,5 @@ void parse_arg(int argc, char **argv){
             f = fopen(argv[i], "r");
         }
     }
+
 }
