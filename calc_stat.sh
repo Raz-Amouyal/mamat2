@@ -34,7 +34,7 @@ mkdir "$directory_name"
 
 gcc -g -Wall hist.c -o hist.exe
 
-./hist.exe "$stats" > ./"$directory_name"/histogram.txt
+./hist.exe "$stats" > ./"$directory_name"/statistics.txt
 
 gcc -g -Wall mean.c -o mean.exe
 gcc -g -Wall median.c -o median.exe
