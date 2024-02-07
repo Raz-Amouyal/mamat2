@@ -64,23 +64,8 @@ void operate(FILE *f){
     for (int i = 0; i < NUMGRADES ; ++i) {
         count += hist[i];
         if (count >= median_number){
-            printf("%d\t", grade);
+            printf("%d", grade);
             break;
         }
     }
 }
-
-
-//void parse_arg(int argc, char **argv){
-//    f = stdin;
-//    for (int i = 1; i < argc; ++i) {
-//        if (!strcmp(argv[i], "-")){
-//            f = stdin;
-//        } else if (!strcmp(argv[i], "-n_bins")){
-//            nbins = i<argc-1 ? atoi(argv[i+1]) : 10;
-//            i++;
-//        } else {
-//            f = fopen(argv[i], "r");
-//        }
-//    }
-//}
